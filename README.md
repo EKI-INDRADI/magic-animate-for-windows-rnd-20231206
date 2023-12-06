@@ -7,22 +7,27 @@ TESTED SUCCESS INSTALL 2023-12-06
 magic-animate
 |----pretrained_models (create folder pretrained_models)
   |----MagicAnimate (git lfs clone https://huggingface.co/zcxu-eric/MagicAnimate)
-    |----appearance_encoder (all)
+    |----appearance_encoder
       |----diffusion_pytorch_model.safetensors
       |----config.json
-    |----densepose_controlnet (all)
+    |----densepose_controlnet
       |----diffusion_pytorch_model.safetensors
       |----config.json
-    |----temporal_attention (all)
+    |----temporal_attention
       |----temporal_attention.ckpt
   |----sd-vae-ft-mse (manual download https://huggingface.co/stabilityai/sd-vae-ft-mse)
     |----config.json
     |----diffusion_pytorch_model.safetensors
   |----stable-diffusion-v1-5 (manual download https://huggingface.co/runwayml/stable-diffusion-v1-5, dont donload all 100GB+)
-    |----scheduler (all)
-    |----text_encoder (all)
+    |----scheduler
+       |----scheduler_config.json
+    |----text_encoder
+       |----config.json
+       |----pytorch_model.bin
     |----tokenizer (all)
-    |----unet (all)
+    |----unet
+       |----diffusion_pytorch_model.bin
+       |----config.json
     |----v1-5-pruned-emaonly.safetensors
 |----...
 
