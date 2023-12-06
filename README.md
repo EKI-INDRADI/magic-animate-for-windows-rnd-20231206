@@ -133,10 +133,6 @@ python -m demo.gradio_animate_gpu_1
 ```
 
 
-[![hahah i got the result](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
-
-
-
 <!-- # magic-edit.github.io -->
 
 <p align="center">
