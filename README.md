@@ -1,7 +1,9 @@
 
 thanks to [sdbds](https://github.com/sdbds) & [magic-research](https://github.com/magic-research)
 
-TESTED SUCCESS INSTALL 2023-12-06
+TESTED SUCCESS INSTALL 2023-12-06 MINIMUM GPU 12GB (EX : RTX 3060)
+
+
 
 ```sh
 magic-animate
@@ -57,8 +59,76 @@ how to run
 # SINGLE GPU
 python -m demo.gradio_animate
 
-# MULTI GPU
+# MULTI GPU (ISSUE PATH)
 python -m demo.gradio_animate_dist
+
+```
+
+how to run spesific gpu (for example gpu:0 RTX 3080 10Gb, gpu:1 RTX 30860 12GB)
+
+demo\animate_gpu_1.py
+```python
+import os
+#---- SPESIFIC CUDA
+# FOR HIDDEN GPU
+os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+#---- SPESIFIC CUDA
+
+#...
+
+#...
+
+import torch
+# print('torch.cuda.device_count() CHECK CUDA DEVICES : ')
+# print(torch.cuda.device_count())
+# result : 1  << I HAVE 2 GPU , because CUDA_VISIBLE_DEVICES only 1
+
+
+#...
+
+
+#...
+
+
+class MagicAnimate():
+    def __init__(self, config="configs/prompts/animation.yaml") -> None:
+        print("Initializing MagicAnimate Pipeline...")
+        *_, func_args = inspect.getargvalues(inspect.currentframe())
+        func_args = dict(func_args)
+        
+        config  = OmegaConf.load(config)
+        
+        inference_config = OmegaConf.load(config.inference_config)
+            
+        motion_module = config.motion_module
+       
+        ### >>> create animation pipeline >>> ###
+        tokenizer = CLIPTokenizer.from_pretrained(config.pretrained_model_path, subfolder="tokenizer")
+        text_encoder = CLIPTextModel.from_pretrained(config.pretrained_model_path, subfolder="text_encoder")
+        if config.pretrained_unet_path:
+            unet = UNet3DConditionModel.from_pretrained_2d(config.pretrained_unet_path, unet_additional_kwargs=OmegaConf.to_container(inference_config.unet_additional_kwargs))
+        else:
+            unet = UNet3DConditionModel.from_pretrained_2d(config.pretrained_model_path, subfolder="unet", unet_additional_kwargs=OmegaConf.to_container(inference_config.unet_additional_kwargs))
+        self.appearance_encoder = AppearanceEncoderModel.from_pretrained(config.pretrained_appearance_encoder_path, subfolder="appearance_encoder").cuda()
+        self.reference_control_writer = ReferenceAttentionControl(self.appearance_encoder, do_classifier_free_guidance=True, mode='write', fusion_blocks=config.fusion_blocks)
+        self.reference_control_reader = ReferenceAttentionControl(unet, do_classifier_free_guidance=True, mode='read', fusion_blocks=config.fusion_blocks)
+        if config.pretrained_vae_path :
+            vae = AutoencoderKL.from_pretrained(config.pretrained_vae_path)
+        else:
+            vae = AutoencoderKL.from_pretrained(config.pretrained_model_path, subfolder="vae")
+
+        #---- SPESIFIC CUDA
+
+        # SET CONSOLE YOUR GPU
+        torch.cuda.set_device(0)  
+
+        #---- /SPESIFIC CUDA
+```
+
+after edit run
+```sh
+# spesific GPU
+python -m demo.gradio_animate_gpu-1
 
 ```
 
