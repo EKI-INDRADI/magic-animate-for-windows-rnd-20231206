@@ -148,6 +148,8 @@ python -m demo.gradio_animate_gpu_1
 ```
 [REFERENCE](https://www.bilibili.com/video/BV1ig4y1f7BQ/?share_source=copy_web&vd_source=842db193ae3e8fc29019a57821e30000)
 
+[video to densepose magic animation](https://github.com/EKI-INDRADI/magic-animate-vid2densepose-rnd-20231206)
+
 <!-- # magic-edit.github.io -->
 
 <p align="center">
