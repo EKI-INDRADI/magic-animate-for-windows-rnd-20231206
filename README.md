@@ -128,10 +128,12 @@ class MagicAnimate():
 after edit run
 ```sh
 # spesific GPU
-python -m demo.gradio_animate_gpu-1
+python -m demo.gradio_animate_gpu_1
 
 ```
 
+
+[![hahah i got the result](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
 
 
 
