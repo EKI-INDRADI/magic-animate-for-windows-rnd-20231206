@@ -68,6 +68,16 @@ python -m demo.gradio_animate_dist
 
 how to run spesific gpu (for example , gpu:0 RTX 3080 10GG, gpu:1 RTX 3060 12GB)
 
+```sh
+
+# spesific GPU 1
+
+python -m demo.gradio_animate_gpu_1
+
+```
+
+FOR CUSTOM :
+
 demo\animate_gpu_1.py
 ```python
 import os
@@ -128,8 +138,11 @@ class MagicAnimate():
 ```
 
 after edit run
+
 ```sh
-# spesific GPU
+
+# spesific GPU 1
+
 python -m demo.gradio_animate_gpu_1
 
 ```
