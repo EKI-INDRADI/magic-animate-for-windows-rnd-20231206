@@ -15,10 +15,10 @@ magic-animate
       |----config.json
     |----temporal_attention (all)
       |----temporal_attention.ckpt
-  |----sd-vae-ft-mse (manual download)
+  |----sd-vae-ft-mse (manual download https://huggingface.co/stabilityai/sd-vae-ft-mse)
     |----config.json
     |----diffusion_pytorch_model.safetensors
-  |----stable-diffusion-v1-5 (manual download, dont donload all 100GB+)
+  |----stable-diffusion-v1-5 (manual download ttps://huggingface.co/runwayml/stable-diffusion-v1-5, dont donload all 100GB+)
     |----scheduler (all)
     |----text_encoder (all)
     |----tokenizer (all)
