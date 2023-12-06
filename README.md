@@ -70,7 +70,7 @@ how to run spesific gpu (for example , gpu:0 RTX 3080 10GG, gpu:1 RTX 3060 12GB)
 
 ```sh
 
-# spesific GPU 1
+# example i have 2 gpu [0,1] and run spesific GPU 1
 
 python -m demo.gradio_animate_gpu_1
 
