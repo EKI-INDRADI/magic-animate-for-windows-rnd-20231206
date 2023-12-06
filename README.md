@@ -1,3 +1,78 @@
+
+thanks to [sdbds](https://github.com/sdbds) & [magic-research](https://github.com/magic-research)
+
+TESTED SUCCESS INSTALL 2023-12-06
+
+```sh
+magic-animate
+|----pretrained_models (create folder pretrained_models)
+  |----MagicAnimate (git lfs clone https://huggingface.co/zcxu-eric/MagicAnimate)
+    |----appearance_encoder (all)
+      |----diffusion_pytorch_model.safetensors
+      |----config.json
+    |----densepose_controlnet (all)
+      |----diffusion_pytorch_model.safetensors
+      |----config.json
+    |----temporal_attention (all)
+      |----temporal_attention.ckpt
+  |----sd-vae-ft-mse (manual download)
+    |----config.json
+    |----diffusion_pytorch_model.safetensors
+  |----stable-diffusion-v1-5 (manual download, dont donload all 100GB+)
+    |----scheduler (all)
+    |----text_encoder (all)
+    |----tokenizer (all)
+    |----unet (all)
+    |----v1-5-pruned-emaonly.safetensors
+|----...
+
+```
+
+```sh
+CUDA SDK 11.8 + WIN ENV (LATEST)
+CUDA CUDNN 8.9 + WIN ENV  (LATEST)
+FFMPEG 6 + WIN ENV (LATEST)
+ANACONDA
+GIT
+
+how to setup ? go chat.openai.com
+```
+
+```sh
+git clone git@github.com:EKI-INDRADI/magic-animate-for-windows-rnd-20231206.git
+cd magic-animate-for-windows-rnd-20231206
+conda create -n m_animate_for_win python=3.10 -y
+conda activate m_animate_for_win
+pip install -r requirements-windows.txt
+
+```
+
+how to run
+```sh
+
+python -m demo.gradio_animate
+
+# SINGLE GPU
+
+python /demo/gradio_animate.py
+
+# MULTI GPU
+
+python /demo/gradio_animate_dist.py
+
+# SINGLE GPU
+
+python -m magicanimate.pipelines.animation --config configs\prompts\animation.yaml
+
+# MULTI GPU
+
+python -m magicanimate.pipelines.animation --config configs\prompts\animation.yaml --dist
+
+```
+
+
+
+
 <!-- # magic-edit.github.io -->
 
 <p align="center">

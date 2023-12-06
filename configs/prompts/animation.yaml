@@ -1,8 +1,12 @@
 pretrained_model_path: "pretrained_models/stable-diffusion-v1-5"
-pretrained_vae_path: ""
+# ------------------BUG FIX 20231206
+pretrained_vae_path: "pretrained_models/sd-vae-ft-mse"
+# ------------------/BUG FIX 20231206
 pretrained_controlnet_path: "pretrained_models/MagicAnimate/densepose_controlnet"
 pretrained_appearance_encoder_path: "pretrained_models/MagicAnimate/appearance_encoder"
-pretrained_unet_path: ""
+# ------------------BUG FIX 20231206
+pretrained_unet_path: "pretrained_models/stable-diffusion-v1-5/unet"
+# ------------------/BUG FIX 20231206
 
 motion_module: "pretrained_models/MagicAnimate/temporal_attention/temporal_attention.ckpt"
 
