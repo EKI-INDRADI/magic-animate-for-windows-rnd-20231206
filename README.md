@@ -66,7 +66,7 @@ python -m demo.gradio_animate_dist
 
 ```
 
-how to run spesific gpu (for example , gpu:0 RTX 3080 10GG, gpu:1 RTX 3060 12GB)
+how to run spesific gpu (for example , gpu:0 RTX 3080 10GB, gpu:1 RTX 3060 12GB)
 
 ```sh
 
