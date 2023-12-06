@@ -49,24 +49,11 @@ pip install -r requirements-windows.txt
 
 how to run
 ```sh
-
+# SINGLE GPU
 python -m demo.gradio_animate
 
-# SINGLE GPU
-
-python /demo/gradio_animate.py
-
 # MULTI GPU
-
-python /demo/gradio_animate_dist.py
-
-# SINGLE GPU
-
-python -m magicanimate.pipelines.animation --config configs\prompts\animation.yaml
-
-# MULTI GPU
-
-python -m magicanimate.pipelines.animation --config configs\prompts\animation.yaml --dist
+python -m demo.gradio_animate_dist
 
 ```
 
