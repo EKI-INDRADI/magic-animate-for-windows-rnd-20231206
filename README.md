@@ -3,7 +3,9 @@ thanks to [sdbds](https://github.com/sdbds) & [magic-research](https://github.co
 
 TESTED SUCCESS INSTALL 2023-12-06 MINIMUM GPU 12GB (EX : RTX 3060)
 
-[![SUCCESS GENERATE]]([link-to-your-video.mp4](https://raw.githubusercontent.com/EKI-INDRADI/magic-animate-for-windows-rnd-20231206/main/2023-12-06T19-17-13.mp4))
+SUCCESS GENERATE
+
+https://github.com/EKI-INDRADI/magic-animate-for-windows-rnd-20231206/assets/47073420/1588088e-9cac-4693-9b76-c1463ca31055
 
 ```sh
 magic-animate
